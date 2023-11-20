@@ -145,6 +145,7 @@
             Controls.Add(label1);
             Controls.Add(logo);
             Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Connexion";
             Text = "Connexion";

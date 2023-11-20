@@ -53,5 +53,12 @@ namespace GestionMatériels.Forms
         {
 
         }
+
+        private void deconnexion_Click(object sender, EventArgs e)
+        {
+            Connexion connexion = new Connexion();
+            connexion.Show();
+            this.Hide();
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAccueil));
             panel1 = new Panel();
+            deconnexion = new Button();
             nageurs = new Button();
             monopalme = new Button();
             combi = new Button();
@@ -65,6 +66,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(92, 51, 127);
+            panel1.Controls.Add(deconnexion);
             panel1.Controls.Add(nageurs);
             panel1.Controls.Add(monopalme);
             panel1.Controls.Add(combi);
@@ -76,6 +78,19 @@
             panel1.Size = new Size(238, 710);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // deconnexion
+            // 
+            deconnexion.FlatStyle = FlatStyle.Flat;
+            deconnexion.Font = new Font("Microsoft YaHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            deconnexion.ForeColor = Color.White;
+            deconnexion.Location = new Point(51, 643);
+            deconnexion.Name = "deconnexion";
+            deconnexion.Size = new Size(140, 40);
+            deconnexion.TabIndex = 1;
+            deconnexion.Text = "Déconnexion";
+            deconnexion.UseVisualStyleBackColor = true;
+            deconnexion.Click += deconnexion_Click;
             // 
             // nageurs
             // 
@@ -110,7 +125,7 @@
             combi.FlatAppearance.BorderColor = Color.FromArgb(92, 51, 127);
             combi.FlatStyle = FlatStyle.Flat;
             combi.Font = new Font("Microsoft YaHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            combi.ForeColor = Color.White;
+            combi.ForeColor = Color.WhiteSmoke;
             combi.Location = new Point(0, 262);
             combi.Margin = new Padding(4);
             combi.Name = "combi";
@@ -357,8 +372,9 @@
             Controls.Add(listtuba);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FAccueil";
-            Text = "FAccueil";
+            Text = "Accueil";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
@@ -397,5 +413,6 @@
         private ColumnHeader POINTURE;
         private ColumnHeader SAISON;
         private ColumnHeader TAILLE;
+        private Button deconnexion;
     }
 }
