@@ -173,6 +173,7 @@
             Controls.Add(label1);
             Name = "FAddCombi";
             Text = "FAddCombi";
+            Load += FAddCombi_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

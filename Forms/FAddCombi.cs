@@ -47,5 +47,10 @@ namespace GestionMatériels.Forms
             accueil.Show();
             this.Hide();
         }
+
+        private void FAddCombi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
