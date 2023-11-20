@@ -76,7 +76,7 @@
             passwordBox.BorderStyle = BorderStyle.None;
             passwordBox.Cursor = Cursors.IBeam;
             passwordBox.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            passwordBox.ForeColor = Color.FromArgb(0, 126, 249);
+            passwordBox.ForeColor = Color.FromArgb(92, 51, 127);
             passwordBox.Location = new Point(82, 216);
             passwordBox.Name = "passwordBox";
             passwordBox.PasswordChar = '*';
@@ -88,7 +88,7 @@
             usernameBox.BorderStyle = BorderStyle.None;
             usernameBox.Cursor = Cursors.IBeam;
             usernameBox.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            usernameBox.ForeColor = Color.FromArgb(0, 126, 249);
+            usernameBox.ForeColor = Color.FromArgb(92, 51, 127);
             usernameBox.Location = new Point(82, 142);
             usernameBox.Name = "usernameBox";
             usernameBox.RightToLeft = RightToLeft.No;

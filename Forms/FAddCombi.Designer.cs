@@ -36,6 +36,9 @@
             label3 = new Label();
             label4 = new Label();
             boutonAddCombi = new Button();
+            boutonretour = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -130,12 +133,36 @@
             boutonAddCombi.UseVisualStyleBackColor = true;
             boutonAddCombi.Click += boutonAddCombi_Click;
             // 
+            // boutonretour
+            // 
+            boutonretour.FlatStyle = FlatStyle.Flat;
+            boutonretour.Font = new Font("Microsoft YaHei", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            boutonretour.ForeColor = Color.White;
+            boutonretour.Location = new Point(17, 17);
+            boutonretour.Name = "boutonretour";
+            boutonretour.Size = new Size(40, 40);
+            boutonretour.TabIndex = 9;
+            boutonretour.Text = "←";
+            boutonretour.UseVisualStyleBackColor = true;
+            boutonretour.Click += boutonretour_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo_mini;
+            pictureBox1.Location = new Point(582, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(49, 49);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // FAddCombi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(92, 51, 127);
             ClientSize = new Size(643, 455);
+            Controls.Add(pictureBox1);
+            Controls.Add(boutonretour);
             Controls.Add(boutonAddCombi);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -146,6 +173,7 @@
             Controls.Add(label1);
             Name = "FAddCombi";
             Text = "FAddCombi";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +188,7 @@
         private Label label3;
         private Label label4;
         private Button boutonAddCombi;
+        private Button boutonretour;
+        private PictureBox pictureBox1;
     }
 }

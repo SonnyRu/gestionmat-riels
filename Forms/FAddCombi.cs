@@ -40,5 +40,12 @@ namespace GestionMatériels.Forms
         {
 
         }
+
+        private void boutonretour_Click(object sender, EventArgs e)
+        {
+            FAccueil accueil = new FAccueil();
+            accueil.Show();
+            this.Hide();
+        }
     }
 }
