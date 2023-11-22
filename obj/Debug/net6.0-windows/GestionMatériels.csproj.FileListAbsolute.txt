@@ -18,3 +18,4 @@ C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\n
 C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.Forms.FAccueil.resources
 C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.Forms.FAddCombi.resources
 C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.Forms.FVNageurs.resources
+C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\bin\Debug\net6.0-windows\GestionMatériels.dll.config
