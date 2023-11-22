@@ -105,6 +105,7 @@
             nageurs.TabIndex = 3;
             nageurs.Text = "Nageurs";
             nageurs.UseVisualStyleBackColor = true;
+            nageurs.Click += nageurs_Click;
             // 
             // monopalme
             // 

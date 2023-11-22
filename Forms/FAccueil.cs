@@ -60,5 +60,12 @@ namespace GestionMatériels.Forms
             connexion.Show();
             this.Hide();
         }
+
+        private void nageurs_Click(object sender, EventArgs e)
+        {
+            FVNageurs nageur = new FVNageurs();
+            nageur.Show();
+            this.Hide();
+        }
     }
 }
