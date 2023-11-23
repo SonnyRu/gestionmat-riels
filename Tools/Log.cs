@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionMatériel.Tools
+namespace GestionMatériels.Tools
 {
     /// <summary>
     /// Auteur : Sonny Russo.

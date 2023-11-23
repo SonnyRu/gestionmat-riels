@@ -21,18 +21,24 @@ namespace GestionMatériels.Models
         /// <summary>
         /// Id du matériel.
         /// </summary>
-        protected int Id { get => id; set => id = value; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Marque du matériel.
         /// </summary>
-        protected string Marque { get => marque; set => marque = value; }
+        public string Marque { get; set; }
 
         /// <summary>
-        /// Nom du matériel
+        /// Nom du matériel.
         /// </summary>
-        protected string Nom { get => nom; set => nom = value; }
+        public string Nom { get; set; }
 
+        /// <summary>
+        /// Constructeur de la classe MatérielClass.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="marque"></param>
+        /// <param name="nom"></param>
         public MatérielModel(int id, string marque, string nom)
         {
             Id = id;
@@ -43,6 +49,11 @@ namespace GestionMatériels.Models
         public string GetNom()
         {
             return Nom;
+        }
+
+        public MatérielModel()
+        {
+
         }
     }
 }

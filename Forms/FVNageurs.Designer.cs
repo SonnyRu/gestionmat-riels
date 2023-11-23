@@ -66,7 +66,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.logo_mini;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(745, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(51, 52);

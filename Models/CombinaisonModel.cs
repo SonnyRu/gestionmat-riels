@@ -17,22 +17,6 @@ namespace GestionMatériels.Models
         private string taille;
         private string saisonCombi;
 
-
-        /// <summary>
-        /// Constructeur de la classe CombinaisonMatérielClass.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="marque"></param>
-        /// <param name="nom"></param>
-        /// <param name="taille"></param>
-        /// <param name="saisonCombi"></param>
-        public CombinaisonModel(int id, string marque, string nom, string taille, string saisonCombi)
-            : base(id, marque, nom)
-        {
-            Taille = taille;
-            SaisonCombi = saisonCombi;
-        }
-
         /// <summary>
         /// Taille de la Combinaison.
         /// </summary>
@@ -81,6 +65,26 @@ namespace GestionMatériels.Models
         public string GetTaille()
         {
             return taille;
+        }
+
+        /// <summary>
+        /// Constructeur de la classe CombinaisonMatérielClass.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="marque"></param>
+        /// <param name="nom"></param>
+        /// <param name="taille"></param>
+        /// <param name="saisonCombi"></param>
+        public CombinaisonModel(int id, string marque, string nom, string taille, string saisonCombi)
+            : base(id, marque, nom)
+        {
+            Taille = taille;
+            SaisonCombi = saisonCombi;
+        }
+
+        public CombinaisonModel()
+        {
+
         }
     }
 }

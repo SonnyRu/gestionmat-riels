@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
 using Microsoft.VisualBasic.Logging;
-using GestionMatériel.Tools;
+using GestionMatériels.Tools;
 
 namespace GestionMatériels.DataAccess
 {
@@ -37,7 +37,7 @@ namespace GestionMatériels.DataAccess
             string connectionString;
             try
             {
-                connectionString = ConfigurationManager.ConnectionStrings["sqlserver_creditsio"].ConnectionString;
+                connectionString = ConfigurationManager.ConnectionStrings["sqlserver_gestionmatériel"].ConnectionString;
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
 

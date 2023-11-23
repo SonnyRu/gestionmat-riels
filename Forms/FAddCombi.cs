@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionMatériels.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,20 @@ namespace GestionMatériels.Forms
 
         private void boutonAddCombi_Click(object sender, EventArgs e)
         {
+            string nom = "combinaison";
+            string marque = boxMarque.Text;
+            string taille = boxTaille.Text;
+            string saison = boxSaison.Text;
 
+            try
+            {
+                DBInterface.AjouterCombinaison(marque, nom, taille, saison);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite : " + ex.Message);
+            }
+            label5.Text = "Combinaison Ajoutée";
         }
 
         private void boutonretour_Click(object sender, EventArgs e)
@@ -49,6 +63,11 @@ namespace GestionMatériels.Forms
         }
 
         private void FAddCombi_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

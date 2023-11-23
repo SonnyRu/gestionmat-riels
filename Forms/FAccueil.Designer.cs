@@ -58,6 +58,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            actualisation = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -156,7 +157,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Cursor = Cursors.No;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.logo_rond;
             pictureBox1.Location = new Point(22, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(194, 204);
@@ -173,6 +174,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1042, 141);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // label1
             // 
@@ -244,13 +246,14 @@
             listmono.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4, TYPE, POINTURE });
             listmono.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listmono.ForeColor = SystemColors.InfoText;
-            listmono.Location = new Point(715, 215);
+            listmono.Location = new Point(702, 215);
             listmono.Margin = new Padding(4);
             listmono.Name = "listmono";
-            listmono.Size = new Size(405, 201);
+            listmono.Size = new Size(506, 201);
             listmono.TabIndex = 4;
             listmono.UseCompatibleStateImageBehavior = false;
             listmono.View = View.Details;
+            listmono.SelectedIndexChanged += listmono_SelectedIndexChanged;
             // 
             // columnHeader3
             // 
@@ -261,13 +264,13 @@
             // 
             columnHeader4.Text = "MARQUE";
             columnHeader4.TextAlign = HorizontalAlignment.Center;
-            columnHeader4.Width = 100;
+            columnHeader4.Width = 150;
             // 
             // TYPE
             // 
             TYPE.Text = "TYPE";
             TYPE.TextAlign = HorizontalAlignment.Center;
-            TYPE.Width = 100;
+            TYPE.Width = 150;
             // 
             // POINTURE
             // 
@@ -281,10 +284,10 @@
             listcombi.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, SAISON, TAILLE });
             listcombi.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listcombi.ForeColor = SystemColors.InfoText;
-            listcombi.Location = new Point(715, 482);
+            listcombi.Location = new Point(702, 482);
             listcombi.Margin = new Padding(4);
             listcombi.Name = "listcombi";
-            listcombi.Size = new Size(405, 201);
+            listcombi.Size = new Size(506, 201);
             listcombi.TabIndex = 5;
             listcombi.UseCompatibleStateImageBehavior = false;
             listcombi.View = View.Details;
@@ -300,13 +303,13 @@
             // 
             columnHeader6.Text = "MARQUE";
             columnHeader6.TextAlign = HorizontalAlignment.Center;
-            columnHeader6.Width = 100;
+            columnHeader6.Width = 150;
             // 
             // SAISON
             // 
             SAISON.Text = "SAISON";
             SAISON.TextAlign = HorizontalAlignment.Center;
-            SAISON.Width = 100;
+            SAISON.Width = 150;
             // 
             // TAILLE
             // 
@@ -330,18 +333,19 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft YaHei", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(92, 51, 127);
-            label3.Location = new Point(440, 447);
+            label3.Location = new Point(438, 447);
             label3.Name = "label3";
-            label3.Size = new Size(107, 31);
+            label3.Size = new Size(119, 31);
             label3.TabIndex = 7;
-            label3.Text = "Lunette";
+            label3.Text = "Lunettes";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft YaHei", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(92, 51, 127);
-            label4.Location = new Point(841, 179);
+            label4.Location = new Point(869, 179);
             label4.Name = "label4";
             label4.Size = new Size(162, 31);
             label4.TabIndex = 8;
@@ -352,17 +356,29 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft YaHei", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(92, 51, 127);
-            label5.Location = new Point(829, 447);
+            label5.Location = new Point(869, 447);
             label5.Name = "label5";
             label5.Size = new Size(174, 31);
             label5.TabIndex = 9;
             label5.Text = "Combinaison";
+            // 
+            // actualisation
+            // 
+            actualisation.FlatStyle = FlatStyle.Flat;
+            actualisation.Image = (Image)resources.GetObject("actualisation.Image");
+            actualisation.Location = new Point(245, 148);
+            actualisation.Name = "actualisation";
+            actualisation.Size = new Size(56, 54);
+            actualisation.TabIndex = 10;
+            actualisation.UseVisualStyleBackColor = true;
+            actualisation.Click += actualisation_Click;
             // 
             // FAccueil
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1268, 710);
+            Controls.Add(actualisation);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -376,6 +392,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FAccueil";
             Text = "Accueil";
+            Load += FAccueil_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
@@ -415,5 +432,6 @@
         private ColumnHeader SAISON;
         private ColumnHeader TAILLE;
         private Button deconnexion;
+        private Button actualisation;
     }
 }

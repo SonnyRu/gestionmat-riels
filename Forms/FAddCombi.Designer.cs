@@ -39,6 +39,7 @@
             boutonAddCombi = new Button();
             boutonretour = new Button();
             pictureBox1 = new PictureBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -149,12 +150,23 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.logo_mini;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(582, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(49, 49);
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft YaHei", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.LimeGreen;
+            label5.Location = new Point(223, 422);
+            label5.Name = "label5";
+            label5.Size = new Size(0, 24);
+            label5.TabIndex = 11;
+            label5.Click += label5_Click;
             // 
             // FAddCombi
             // 
@@ -162,6 +174,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(92, 51, 127);
             ClientSize = new Size(643, 455);
+            Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(boutonretour);
             Controls.Add(boutonAddCombi);
@@ -193,5 +206,6 @@
         private Button boutonAddCombi;
         private Button boutonretour;
         private PictureBox pictureBox1;
+        private Label label5;
     }
 }

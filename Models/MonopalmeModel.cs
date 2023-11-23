@@ -15,43 +15,31 @@ namespace GestionMatériels.Models
     public class MonopalmeModel : MatérielModel
     {
 
-        private string type;
+        private string typemono;
         private string pointure;
 
-        public string Type
+        /// <summary>
+        /// Type de la monopalme.
+        /// </summary>
+        public string TypeMono
         {
-            get { return type; }
-            set { type = value; }
+            get { return typemono; }
+            set { typemono = value; }
         }
 
+        /// <summary>
+        /// Pointure de la monopalme.
+        /// </summary>
         public string Pointure
         {
             get { return pointure; }
             set { pointure = value; }
         }
 
-        #region Constructeur
         /// <summary>
-        /// Constructeur de la classe MonopalmeMatérielClass.
+        /// Obtenir l'id de la monopalme.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="marque"></param>
-        /// <param name="nom"></param>
-        /// <param name="type"></param>
-        /// <param name="pointure"></param>
-        public MonopalmeModel(int id, string marque, string nom, string type, string pointure)
-            : base(id, marque, nom)
-        {
-            Type = type;
-            Pointure = pointure;
-        }
-        #endregion
-
-        #region méthodes
-        /// <summary>
-        /// Retourne l'id du Matériel.
-        /// </summary>
-        /// <returns></returns>
+        /// <returns>ID</returns>
         public int GetId()
         {
             return Id;
@@ -74,6 +62,25 @@ namespace GestionMatériels.Models
         {
             return Nom;
         }
-        #endregion
+
+        /// <summary>
+        /// Constructeur de la classe MonopalmeMatérielClass.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="marque"></param>
+        /// <param name="nom"></param>
+        /// <param name="type"></param>
+        /// <param name="pointure"></param>
+        public MonopalmeModel(int id, string marque, string nom, string typemono, string pointure)
+            : base(id, marque, nom)
+        {
+            TypeMono = typemono;
+            Pointure = pointure;
+        }
+
+        public MonopalmeModel()
+        {
+
+        }
     }
 }
