@@ -36,5 +36,7 @@ namespace GestionMatériels.Models
             Téléphone1 = téléphone;
         }
 
+        public NageurModel() { }
+
     }
 }

@@ -133,6 +133,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FVNageurs";
             Text = "Nageurs";
+            Load += FVNageurs_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

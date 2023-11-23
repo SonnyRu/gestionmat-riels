@@ -323,6 +323,62 @@ namespace GestionMatériels.DataAccess
         }
         #endregion
 
+        public static List<NageurModel> GetAllNageurs()
+        {
+            List<NageurModel> nageurs = new List<NageurModel>();
+            SqlConnection connection = null;
+            try
+            {
+                connection = Connection.getInstance().GetConnection();
+                using (SqlCommand sqlCommand = new SqlCommand("lp_ProVoirNageur", connection))
+                {
+                    using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
+                    {
+                        if (sqlDataReader.HasRows)
+                        {
+                            while (sqlDataReader.Read())
+                            {
+                                NageurModel nageur = new NageurModel();
+                                nageur.Id1 = (int)sqlDataReader["Id"];
+                                nageur.Nom1 = (string)sqlDataReader["Nom"];
+                                nageur.Prénom1 = (string)sqlDataReader["Prénom"];
+                                nageur.Mail1 = (string)sqlDataReader["Mail"];
+                                nageur.Téléphone1 = (string)sqlDataReader["Téléphone"];
+                                nageurs.Add(nageur);
+                            }
+                            string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                            using (StreamWriter w = File.AppendText(logErrorFilePath))
+                            {
+                                Logs.WriteLog(String.Concat("Nageur : Affichage les nageurs"), w);
+                            }
+                        }
+                        else
+                        {
+                            string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                            using (StreamWriter w = File.AppendText(logErrorFilePath))
+                            {
+                                Logs.WriteLog(String.Concat(String.Concat("Nageur : Erreur")), w);
+                            }
+                        }
+                    }
+                }
+            }
+
+            catch (InvalidOperationException)
+            {
+                string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                using (StreamWriter w = File.AppendText(logErrorFilePath))
+                {
+                    Logs.WriteLog("Nageur : erreur SQL", w);
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return nageurs;
+        }
+
 
     }
 }
