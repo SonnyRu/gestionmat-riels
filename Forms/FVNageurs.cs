@@ -83,7 +83,7 @@ namespace GestionMatériels.Forms
             {
                 foreach (NageurModel nageur in nageurs)
                 {
-                    string[] row = { nageur.Nom1, nageur.Prénom1, nageur.Mail1, nageur.Téléphone1 };
+                    string[] row = { Convert.ToString(nageur.Id1), nageur.Nom1, nageur.Prénom1, nageur.Mail1, nageur.Téléphone1 };
                     ListViewItem listViewItem = new ListViewItem(row);
                     voirnageurs.Items.Add(listViewItem);
                 }
