@@ -57,6 +57,7 @@
             button1.TabIndex = 0;
             button1.Text = "←";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -176,6 +177,7 @@
             boutonAddCombi.TabIndex = 11;
             boutonAddCombi.Text = "Ajouter";
             boutonAddCombi.UseVisualStyleBackColor = true;
+            boutonAddCombi.Click += boutonAddCombi_Click;
             // 
             // FAddPrêt
             // 
@@ -198,6 +200,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FAddPrêt";
             Text = "Ajouter Prêt";
+            Load += FAddPrêt_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)idnageur).EndInit();
             ((System.ComponentModel.ISupportInitialize)idmateriel).EndInit();
