@@ -59,6 +59,10 @@
             label4 = new Label();
             label5 = new Label();
             actualisation = new Button();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -121,6 +125,7 @@
             monopalme.TabIndex = 2;
             monopalme.Text = "Ajout Monopalme";
             monopalme.UseVisualStyleBackColor = true;
+            monopalme.Click += monopalme_Click;
             // 
             // combi
             // 
@@ -190,13 +195,13 @@
             // listtuba
             // 
             listtuba.BackColor = SystemColors.Control;
-            listtuba.Columns.AddRange(new ColumnHeader[] { NOM, MARQUE });
+            listtuba.Columns.AddRange(new ColumnHeader[] { columnHeader9, NOM, MARQUE });
             listtuba.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listtuba.ForeColor = SystemColors.InfoText;
-            listtuba.Location = new Point(413, 215);
+            listtuba.Location = new Point(352, 215);
             listtuba.Margin = new Padding(4);
             listtuba.Name = "listtuba";
-            listtuba.Size = new Size(164, 201);
+            listtuba.Size = new Size(225, 201);
             listtuba.TabIndex = 2;
             listtuba.UseCompatibleStateImageBehavior = false;
             listtuba.View = View.Details;
@@ -210,6 +215,7 @@
             // 
             // MARQUE
             // 
+            MARQUE.DisplayIndex = 2;
             MARQUE.Text = "MARQUE";
             MARQUE.TextAlign = HorizontalAlignment.Center;
             MARQUE.Width = 80;
@@ -217,13 +223,13 @@
             // listlunette
             // 
             listlunette.BackColor = SystemColors.Control;
-            listlunette.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listlunette.Columns.AddRange(new ColumnHeader[] { columnHeader10, columnHeader1, columnHeader2 });
             listlunette.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listlunette.ForeColor = SystemColors.InfoText;
-            listlunette.Location = new Point(413, 482);
+            listlunette.Location = new Point(352, 482);
             listlunette.Margin = new Padding(4);
             listlunette.Name = "listlunette";
-            listlunette.Size = new Size(164, 201);
+            listlunette.Size = new Size(225, 201);
             listlunette.TabIndex = 3;
             listlunette.UseCompatibleStateImageBehavior = false;
             listlunette.View = View.Details;
@@ -243,13 +249,13 @@
             // listmono
             // 
             listmono.BackColor = SystemColors.Control;
-            listmono.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4, TYPE, POINTURE });
+            listmono.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader3, columnHeader4, TYPE, POINTURE });
             listmono.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listmono.ForeColor = SystemColors.InfoText;
-            listmono.Location = new Point(702, 215);
+            listmono.Location = new Point(670, 215);
             listmono.Margin = new Padding(4);
             listmono.Name = "listmono";
-            listmono.Size = new Size(506, 201);
+            listmono.Size = new Size(566, 201);
             listmono.TabIndex = 4;
             listmono.UseCompatibleStateImageBehavior = false;
             listmono.View = View.Details;
@@ -258,6 +264,7 @@
             // columnHeader3
             // 
             columnHeader3.Text = "NOM";
+            columnHeader3.TextAlign = HorizontalAlignment.Center;
             columnHeader3.Width = 100;
             // 
             // columnHeader4
@@ -281,13 +288,13 @@
             // listcombi
             // 
             listcombi.BackColor = SystemColors.Control;
-            listcombi.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, SAISON, TAILLE });
+            listcombi.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader5, columnHeader6, SAISON, TAILLE });
             listcombi.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listcombi.ForeColor = SystemColors.InfoText;
-            listcombi.Location = new Point(702, 482);
+            listcombi.Location = new Point(670, 482);
             listcombi.Margin = new Padding(4);
             listcombi.Name = "listcombi";
-            listcombi.Size = new Size(506, 201);
+            listcombi.Size = new Size(566, 201);
             listcombi.TabIndex = 5;
             listcombi.UseCompatibleStateImageBehavior = false;
             listcombi.View = View.Details;
@@ -295,24 +302,28 @@
             // 
             // columnHeader5
             // 
+            columnHeader5.DisplayIndex = 1;
             columnHeader5.Text = "NOM";
             columnHeader5.TextAlign = HorizontalAlignment.Center;
             columnHeader5.Width = 100;
             // 
             // columnHeader6
             // 
+            columnHeader6.DisplayIndex = 2;
             columnHeader6.Text = "MARQUE";
             columnHeader6.TextAlign = HorizontalAlignment.Center;
             columnHeader6.Width = 150;
             // 
             // SAISON
             // 
+            SAISON.DisplayIndex = 3;
             SAISON.Text = "SAISON";
             SAISON.TextAlign = HorizontalAlignment.Center;
             SAISON.Width = 150;
             // 
             // TAILLE
             // 
+            TAILLE.DisplayIndex = 4;
             TAILLE.Text = "TAILLE";
             TAILLE.Width = 100;
             // 
@@ -321,7 +332,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft YaHei", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(92, 51, 127);
-            label2.Location = new Point(458, 179);
+            label2.Location = new Point(423, 179);
             label2.Name = "label2";
             label2.Size = new Size(75, 31);
             label2.TabIndex = 6;
@@ -333,7 +344,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft YaHei", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(92, 51, 127);
-            label3.Location = new Point(438, 447);
+            label3.Location = new Point(406, 447);
             label3.Name = "label3";
             label3.Size = new Size(119, 31);
             label3.TabIndex = 7;
@@ -364,6 +375,7 @@
             // 
             // actualisation
             // 
+            actualisation.FlatAppearance.BorderColor = Color.FromArgb(92, 51, 127);
             actualisation.FlatStyle = FlatStyle.Flat;
             actualisation.Image = (Image)resources.GetObject("actualisation.Image");
             actualisation.Location = new Point(245, 148);
@@ -372,6 +384,24 @@
             actualisation.TabIndex = 10;
             actualisation.UseVisualStyleBackColor = true;
             actualisation.Click += actualisation_Click;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "ID";
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.DisplayIndex = 0;
+            columnHeader8.Text = "ID";
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.DisplayIndex = 0;
+            columnHeader9.Text = "ID";
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "ID";
             // 
             // FAccueil
             // 
@@ -433,5 +463,9 @@
         private ColumnHeader TAILLE;
         private Button deconnexion;
         private Button actualisation;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader10;
     }
 }

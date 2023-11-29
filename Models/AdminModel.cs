@@ -12,7 +12,7 @@ namespace GestionMatériels.Models
     /// Date de modification :
     /// Modélise un conseiller financier.
     /// </summary>
-    public class ConseillerModel
+    public class AdminModel
     {
         #region Properties
         /// <summary>
@@ -39,11 +39,6 @@ namespace GestionMatériels.Models
         /// Hash du mot de passe du conseiller.
         /// </summary>
         public byte Password { get; set; }
-
-        /// <summary>
-        /// Clients du conseiller.
-        /// </summary>
-        public List<NageurModel> Nageur { get; set; }
         #endregion
     }
 }

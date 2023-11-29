@@ -53,7 +53,9 @@ namespace GestionMatériels.Forms
 
         private void btnPret_Click(object sender, EventArgs e)
         {
-
+            FVPrêts prêts = new FVPrêts();
+            prêts.Show();
+            this.Hide();
         }
 
         private void deconnexion_Click(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace GestionMatériels.Forms
         {
             #region Voir Combinaison
             List<CombinaisonModel> materiels_combi = DBInterface.GetAllCombi("combinaison");
-
+;
             // On teste que la liste ne soit pas vide. Si elle est vide, c'est qu'il y a eu une erreur...
             if (materiels_combi != null)
             {
@@ -94,7 +96,7 @@ namespace GestionMatériels.Forms
                     if (materiel_combi.Taille != "")
                     {
                         //On crée un tableau de chaines de caractères : une ligne contient les données d'un matériel
-                        string[] row = { materiel_combi.Nom, materiel_combi.Marque, materiel_combi.SaisonCombi, materiel_combi.Taille, "", "" };
+                        string[] row = { Convert.ToString(materiel_combi.Id), materiel_combi.Nom, materiel_combi.Marque, materiel_combi.SaisonCombi, materiel_combi.Taille, "", "" };
                         ListViewItem listViewItem = new ListViewItem(row);
                         //On ajoute la ligne dans la listeview
                         listcombi.Items.Add(listViewItem);
@@ -113,7 +115,7 @@ namespace GestionMatériels.Forms
                     if (materiel_mono.Pointure != "")
                     {
                         //On crée un tableau de chaines de caractères : une ligne contient les données d'un matériel
-                        string[] row = { materiel_mono.Nom, materiel_mono.Marque, materiel_mono.TypeMono, materiel_mono.Pointure, "", "" };
+                        string[] row = { Convert.ToString(materiel_mono.Id), materiel_mono.Nom, materiel_mono.Marque, materiel_mono.TypeMono, materiel_mono.Pointure, "", "" };
                         ListViewItem listViewItem = new ListViewItem(row);
                         //On ajoute la ligne dans la listeview
                         listmono.Items.Add(listViewItem);
@@ -128,10 +130,10 @@ namespace GestionMatériels.Forms
             if (tubas != null)
             {
                 // On parcourt la liste de TubaModel
-                foreach (TubaModel tuba in tubas)
+                foreach (MatérielModel tuba in tubas)
                 {
                     // On crée un tableau de chaînes de caractères : une ligne contient les données d'un tuba
-                    string[] row = { tuba.Nom, tuba.Marque, "", "", "", "" };
+                    string[] row = { Convert.ToString(tuba.Id), tuba.Nom, tuba.Marque, "", "", "", "" };
                     ListViewItem listViewItem = new ListViewItem(row);
                     // On ajoute la ligne dans la listeview
                     listtuba.Items.Add(listViewItem);
@@ -140,15 +142,15 @@ namespace GestionMatériels.Forms
             #endregion
 
             #region Voir Lunettes
-            List<LunettesModel> lunettes = DBInterface.GetAllLunettes();
+            List<MatérielModel> lunettes = DBInterface.GetAllLunettes();
 
             if (lunettes != null)
             {
                 // On parcourt la liste de LunettesModel
-                foreach (LunettesModel lunette in lunettes)
+                foreach (MatérielModel lunette in lunettes)
                 {
                     // On crée un tableau de chaînes de caractères : une ligne contient les données d'une lunette
-                    string[] row = { lunette.Nom, lunette.Marque, "", "", "", "" };
+                    string[] row = { Convert.ToString(lunette.Id), lunette.Nom, lunette.Marque, "", "", "", "" };
                     ListViewItem listViewItem = new ListViewItem(row);
                     // On ajoute la ligne dans la listeview
                     listlunette.Items.Add(listViewItem);
@@ -167,7 +169,7 @@ namespace GestionMatériels.Forms
                     originalImage.RotateFlip(RotateFlipType.Rotate90FlipNone);
                     actualisation.Image = originalImage;
                     actualisation.Refresh();
-                    await Task.Delay(150); 
+                    await Task.Delay(150);
                 }
             };
             #endregion
@@ -199,7 +201,7 @@ namespace GestionMatériels.Forms
             List<CombinaisonModel> materiels_combi = DBInterface.GetAllCombi("combinaison");
             List<MonopalmeModel> materiels_mono = DBInterface.GetAllMono("monopalme");
             List<MatérielModel> tubas = DBInterface.GetAllTubas();
-            List<LunettesModel> lunettes = DBInterface.GetAllLunettes();
+            List<MatérielModel> lunettes = DBInterface.GetAllLunettes();
 
             // Mise à jour les ListView avec les nouvelles données
             if (materiels_combi != null)
@@ -230,7 +232,7 @@ namespace GestionMatériels.Forms
 
             if (tubas != null)
             {
-                foreach (TubaModel tuba in tubas)
+                foreach (MatérielModel tuba in tubas)
                 {
                     string[] row = { tuba.Nom, tuba.Marque, "", "", "", "" };
                     ListViewItem listViewItem = new ListViewItem(row);
@@ -240,7 +242,7 @@ namespace GestionMatériels.Forms
 
             if (lunettes != null)
             {
-                foreach (LunettesModel lunette in lunettes)
+                foreach (MatérielModel lunette in lunettes)
                 {
                     string[] row = { lunette.Nom, lunette.Marque, "", "", "", "" };
                     ListViewItem listViewItem = new ListViewItem(row);
@@ -248,6 +250,13 @@ namespace GestionMatériels.Forms
                 }
             }
             #endregion
+        }
+
+        private void monopalme_Click(object sender, EventArgs e)
+        {
+            FAddMono addmono = new FAddMono();
+            addmono.Show();
+            this.Hide();
         }
     }
 }

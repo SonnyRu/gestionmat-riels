@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionMatériels.DataAccess;
+using GestionMatériels.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace GestionMatériels.Forms
 {
     public partial class Connexion : Form
     {
+        private AdminModel admin;
         public Connexion()
         {
             InitializeComponent();
@@ -24,27 +28,29 @@ namespace GestionMatériels.Forms
 
         private void boutonConnexion_Click(object sender, EventArgs e)
         {
-            if (usernameBox.Text == "GestMat" && passwordBox.Text == "C1Secret!")
-            {
 
-                FAccueil accueil = new FAccueil();
-                accueil.Show();
-                this.Hide();
-            }
-            else if (usernameBox.Text == "GestMat")
+            string login, password;
+            login = usernameBox.Text;
+            password = passwordBox.Text;
+            using (SHA512Managed sha2 = new SHA512Managed())
             {
-                authentifmdp.Text = "Incorrect";
-                authentif.Text = " ";
+                var password_hash = sha2.ComputeHash(Encoding.UTF8.GetBytes(password));
+                admin = DBInterface.GetAdmin(login, password_hash);
             }
-            else if (passwordBox.Text == "C1Secret!")
+            //On teste que le conseiller ne soit pas vide. Si il est vide, c'est qu'il y a eu une erreur...
+            if (admin != null)
             {
-                authentif.Text = "Incorrect";
-                authentifmdp.Text = " ";
-            }
-            else
-            {
-                authentif.Text = "Incorrect";
-                authentifmdp.Text = "Incorrect";
+                if (admin.Prenom == null || admin.Nom == null)
+                {
+                    authentif.Text = "Identifiants de connexion invalides";
+                }
+                else
+                {
+                    authentif.Text = "Vous êtes connecté.";
+                    FAccueil accueil = new FAccueil();
+                    accueil.Show();
+                    this.Hide();
+                }
             }
         }
 

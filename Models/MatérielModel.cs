@@ -12,7 +12,7 @@ namespace GestionMatériels.Models
     /// Date de modification :
     /// Modélise un compte.
     /// </summary>
-    public abstract class MatérielModel
+    public class MatérielModel
     {
         protected int id;
         private string marque;

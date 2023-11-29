@@ -27,3 +27,5 @@ C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\bin\Debug\n
 C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.csproj.AssemblyReference.cache
 C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.csproj.CopyComplete
+C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.Forms.FAddMono.resources
+C:\Users\sonny\OneDrive\Bureau\GestionMateriel_New\GestionMatériels\obj\Debug\net6.0-windows\GestionMatériels.Forms.FVPrêts.resources

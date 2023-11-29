@@ -7,10 +7,16 @@
     <Compile Update="Forms\FAddCombi.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FAddMono.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FVNageurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FVPrêts.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

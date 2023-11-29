@@ -9,46 +9,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GestionMatériels.Forms
 {
-    public partial class FVNageurs : Form
+    public partial class FVPrêts : Form
     {
-        public FVNageurs()
+        public FVPrêts()
         {
             InitializeComponent();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listPret_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FVPrêts_Load(object sender, EventArgs e)
         {
-            FAccueil accueil = new FAccueil();
-            accueil.Show();
-            this.Hide();
-        }
-
-        private void FVNageurs_Load(object sender, EventArgs e)
-        {
-
-            #region Voir les Nageurs
-            List<NageurModel> nageurs = DBInterface.GetAllNageurs();
+            #region Voir les Prêts
+            List<PrêtModel> prêts = DBInterface.GetAllPrêt();
 
             //On teste que la liste ne soit pas vide. Si elle est vide, c'est qu'il y a eu une erreur...
-            if (nageurs != null)
+            if (prêts != null)
             {
                 //On parcourt la liste de CombinaisonMatérielClass
-                foreach (NageurModel nageur in nageurs)
+                foreach (PrêtModel prêt in prêts)
                 {
                     //On crée un tableau de chaines de caractères : une ligne contient les données d'un matériel
-                    string[] row = { Convert.ToString(nageur.Id1), nageur.Nom1, nageur.Prénom1, nageur.Mail1, nageur.Téléphone1 };
+                    string[] row = { prêt.Id.ToString(), prêt.Nageur.Nom1, prêt.Nageur.Prénom1, prêt.Matériel.Nom, prêt.Matériel.Marque, prêt.DateEmprunt.ToString(), prêt.DateRetour.ToString() };
                     ListViewItem listViewItem = new ListViewItem(row);
                     //On ajoute la ligne dans la listeview
-                    voirnageurs.Items.Add(listViewItem);
+                    listPret.Items.Add(listViewItem);
                 }
             }
             #endregion
@@ -73,22 +64,31 @@ namespace GestionMatériels.Forms
         {
             #region Actualisation des ListView
             // Vide les ListView
-            voirnageurs.Items.Clear();
+            listPret.Items.Clear();
 
-            // Récupération des nouvelles données de la base de données
-            List<NageurModel> nageurs = DBInterface.GetAllNageurs();
+            List<PrêtModel> prêts = DBInterface.GetAllPrêt();
 
-            // Mise à jour les ListView avec les nouvelles données
-            if (nageurs != null)
+            //On teste que la liste ne soit pas vide. Si elle est vide, c'est qu'il y a eu une erreur...
+            if (prêts != null)
             {
-                foreach (NageurModel nageur in nageurs)
+                //On parcourt la liste de CombinaisonMatérielClass
+                foreach (PrêtModel prêt in prêts)
                 {
-                    string[] row = { nageur.Nom1, nageur.Prénom1, nageur.Mail1, nageur.Téléphone1 };
+                    //On crée un tableau de chaines de caractères : une ligne contient les données d'un matériel
+                    string[] row = { prêt.Id.ToString(), prêt.Nageur.Nom1, prêt.Nageur.Prénom1, prêt.Matériel.Nom, prêt.Matériel.Marque, prêt.DateEmprunt.ToString(), prêt.DateRetour.ToString() };
                     ListViewItem listViewItem = new ListViewItem(row);
-                    voirnageurs.Items.Add(listViewItem);
+                    //On ajoute la ligne dans la listeview
+                    listPret.Items.Add(listViewItem);
                 }
             }
             #endregion
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FAccueil accueil = new FAccueil();
+            accueil.Show();
+            this.Hide();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GestionMatériels.Forms
 {
-    partial class FAddCombi
+    partial class FAddMono
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAddCombi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAddMono));
             label1 = new Label();
             boxMarque = new TextBox();
-            boxTaille = new TextBox();
-            boxSaison = new ComboBox();
+            boxType = new ComboBox();
+            boxPointure = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            boutonAddCombi = new Button();
-            boutonretour = new Button();
+            boutonAddMono = new Button();
+            button1 = new Button();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -50,10 +50,9 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(150, 30);
             label1.Name = "label1";
-            label1.Size = new Size(348, 45);
+            label1.Size = new Size(331, 45);
             label1.TabIndex = 0;
-            label1.Text = "Ajout Combinaison";
-            label1.Click += label1_Click;
+            label1.Text = "Ajout Monopalme";
             // 
             // boxMarque
             // 
@@ -65,88 +64,83 @@
             boxMarque.Size = new Size(231, 27);
             boxMarque.TabIndex = 1;
             // 
-            // boxTaille
+            // boxType
             // 
-            boxTaille.BorderStyle = BorderStyle.None;
-            boxTaille.Cursor = Cursors.IBeam;
-            boxTaille.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            boxTaille.Location = new Point(202, 202);
-            boxTaille.Name = "boxTaille";
-            boxTaille.Size = new Size(231, 27);
-            boxTaille.TabIndex = 2;
-            boxTaille.TextChanged += textBox1_TextChanged;
+            boxType.Cursor = Cursors.IBeam;
+            boxType.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            boxType.FormattingEnabled = true;
+            boxType.Items.AddRange(new object[] { "Loisir", "Compétition", "Entraînement" });
+            boxType.Location = new Point(202, 202);
+            boxType.Name = "boxType";
+            boxType.Size = new Size(231, 35);
+            boxType.TabIndex = 3;
             // 
-            // boxSaison
+            // boxPointure
             // 
-            boxSaison.Cursor = Cursors.IBeam;
-            boxSaison.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            boxSaison.FormattingEnabled = true;
-            boxSaison.Items.AddRange(new object[] { "Été", "Automne", "Hiver", "Printemps" });
-            boxSaison.Location = new Point(202, 279);
-            boxSaison.Name = "boxSaison";
-            boxSaison.Size = new Size(231, 35);
-            boxSaison.TabIndex = 4;
+            boxPointure.BorderStyle = BorderStyle.None;
+            boxPointure.Cursor = Cursors.IBeam;
+            boxPointure.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            boxPointure.Location = new Point(202, 279);
+            boxPointure.Name = "boxPointure";
+            boxPointure.Size = new Size(231, 27);
+            boxPointure.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Cursor = Cursors.No;
             label2.ForeColor = Color.White;
             label2.Location = new Point(202, 108);
             label2.Name = "label2";
             label2.Size = new Size(60, 20);
-            label2.TabIndex = 5;
+            label2.TabIndex = 6;
             label2.Text = "Marque";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Cursor = Cursors.No;
             label3.ForeColor = Color.White;
             label3.Location = new Point(202, 179);
             label3.Name = "label3";
-            label3.Size = new Size(43, 20);
-            label3.TabIndex = 6;
-            label3.Text = "Taille";
+            label3.Size = new Size(40, 20);
+            label3.TabIndex = 7;
+            label3.Text = "Type";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Cursor = Cursors.No;
             label4.ForeColor = Color.White;
             label4.Location = new Point(202, 256);
             label4.Name = "label4";
-            label4.Size = new Size(52, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Saison";
+            label4.Size = new Size(63, 20);
+            label4.TabIndex = 8;
+            label4.Text = "Pointure";
             // 
-            // boutonAddCombi
+            // boutonAddMono
             // 
-            boutonAddCombi.FlatStyle = FlatStyle.Flat;
-            boutonAddCombi.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            boutonAddCombi.ForeColor = Color.White;
-            boutonAddCombi.Location = new Point(202, 348);
-            boutonAddCombi.Margin = new Padding(4);
-            boutonAddCombi.Name = "boutonAddCombi";
-            boutonAddCombi.Size = new Size(231, 64);
-            boutonAddCombi.TabIndex = 8;
-            boutonAddCombi.Text = "Ajouter";
-            boutonAddCombi.UseVisualStyleBackColor = true;
-            boutonAddCombi.Click += boutonAddCombi_Click;
+            boutonAddMono.FlatStyle = FlatStyle.Flat;
+            boutonAddMono.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            boutonAddMono.ForeColor = Color.White;
+            boutonAddMono.Location = new Point(202, 348);
+            boutonAddMono.Margin = new Padding(4);
+            boutonAddMono.Name = "boutonAddMono";
+            boutonAddMono.Size = new Size(231, 64);
+            boutonAddMono.TabIndex = 9;
+            boutonAddMono.Text = "Ajouter";
+            boutonAddMono.UseVisualStyleBackColor = true;
+            boutonAddMono.Click += boutonAddMono_Click;
             // 
-            // boutonretour
+            // button1
             // 
-            boutonretour.FlatStyle = FlatStyle.Flat;
-            boutonretour.Font = new Font("Microsoft YaHei", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            boutonretour.ForeColor = Color.White;
-            boutonretour.Location = new Point(17, 17);
-            boutonretour.Name = "boutonretour";
-            boutonretour.Size = new Size(40, 40);
-            boutonretour.TabIndex = 9;
-            boutonretour.Text = "←";
-            boutonretour.UseVisualStyleBackColor = true;
-            boutonretour.Click += boutonretour_Click;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft YaHei", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(17, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(40, 40);
+            button1.TabIndex = 10;
+            button1.Text = "←";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -154,21 +148,20 @@
             pictureBox1.Location = new Point(582, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(49, 49);
-            pictureBox1.TabIndex = 10;
+            pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft YaHei", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.LimeGreen;
-            label5.Location = new Point(223, 422);
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.Lime;
+            label5.Location = new Point(227, 422);
             label5.Name = "label5";
-            label5.Size = new Size(0, 24);
-            label5.TabIndex = 11;
-            label5.Click += label5_Click;
+            label5.Size = new Size(0, 23);
+            label5.TabIndex = 12;
             // 
-            // FAddCombi
+            // FAddMono
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -176,19 +169,19 @@
             ClientSize = new Size(643, 455);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
-            Controls.Add(boutonretour);
-            Controls.Add(boutonAddCombi);
+            Controls.Add(button1);
+            Controls.Add(boutonAddMono);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(boxSaison);
-            Controls.Add(boxTaille);
+            Controls.Add(boxPointure);
+            Controls.Add(boxType);
             Controls.Add(boxMarque);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FAddCombi";
-            Text = "Ajouter Combinaison";
-            Load += FAddCombi_Load;
+            Name = "FAddMono";
+            Text = "Ajouter Monopalme";
+            Load += FAddMono_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -198,13 +191,13 @@
 
         private Label label1;
         private TextBox boxMarque;
-        private TextBox boxTaille;
-        private ComboBox boxSaison;
+        private ComboBox boxType;
+        private TextBox boxPointure;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button boutonAddCombi;
-        private Button boutonretour;
+        private Button boutonAddMono;
+        private Button button1;
         private PictureBox pictureBox1;
         private Label label5;
     }

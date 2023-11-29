@@ -38,6 +38,8 @@
             Prénom = new ColumnHeader();
             Email = new ColumnHeader();
             Téléphone = new ColumnHeader();
+            actualisation = new Button();
+            columnHeader1 = new ColumnHeader();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -89,12 +91,12 @@
             // voirnageurs
             // 
             voirnageurs.BackColor = SystemColors.Control;
-            voirnageurs.Columns.AddRange(new ColumnHeader[] { Nom, Prénom, Email, Téléphone });
+            voirnageurs.Columns.AddRange(new ColumnHeader[] { columnHeader1, Nom, Prénom, Email, Téléphone });
             voirnageurs.Font = new Font("Microsoft YaHei", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             voirnageurs.ForeColor = Color.FromArgb(92, 51, 127);
-            voirnageurs.Location = new Point(23, 138);
+            voirnageurs.Location = new Point(23, 191);
             voirnageurs.Name = "voirnageurs";
-            voirnageurs.Size = new Size(756, 298);
+            voirnageurs.Size = new Size(756, 245);
             voirnageurs.TabIndex = 1;
             voirnageurs.UseCompatibleStateImageBehavior = false;
             voirnageurs.View = View.Details;
@@ -103,13 +105,14 @@
             // Nom
             // 
             Nom.Text = "Nom";
-            Nom.Width = 150;
+            Nom.TextAlign = HorizontalAlignment.Center;
+            Nom.Width = 100;
             // 
             // Prénom
             // 
             Prénom.Text = "Prénom";
             Prénom.TextAlign = HorizontalAlignment.Center;
-            Prénom.Width = 150;
+            Prénom.Width = 100;
             // 
             // Email
             // 
@@ -123,11 +126,28 @@
             Téléphone.TextAlign = HorizontalAlignment.Center;
             Téléphone.Width = 200;
             // 
+            // actualisation
+            // 
+            actualisation.FlatAppearance.BorderColor = Color.FromArgb(92, 51, 127);
+            actualisation.FlatStyle = FlatStyle.Flat;
+            actualisation.Image = (Image)resources.GetObject("actualisation.Image");
+            actualisation.Location = new Point(23, 131);
+            actualisation.Name = "actualisation";
+            actualisation.Size = new Size(56, 54);
+            actualisation.TabIndex = 2;
+            actualisation.UseVisualStyleBackColor = true;
+            actualisation.Click += actualisation_Click;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "ID";
+            // 
             // FVNageurs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(actualisation);
             Controls.Add(voirnageurs);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -151,5 +171,7 @@
         private ColumnHeader Prénom;
         private ColumnHeader Email;
         private ColumnHeader Téléphone;
+        private Button actualisation;
+        private ColumnHeader columnHeader1;
     }
 }

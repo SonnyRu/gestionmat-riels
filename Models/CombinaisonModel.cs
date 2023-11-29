@@ -35,6 +35,8 @@ namespace GestionMatériels.Models
             set { saisonCombi = value; }
         }
 
+
+
         /// <summary>
         /// Obtenir l'id de la combinaison.
         /// </summary>
