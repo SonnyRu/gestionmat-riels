@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatériels\\GestionMatériels.csproj",
+      "projectUniqueName": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatérielsNew\\gestionmateriel\\GestionMatériels.csproj",
       "projectName": "GestionMatériels",
-      "projectPath": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatériels\\GestionMatériels.csproj",
+      "projectPath": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatérielsNew\\gestionmateriel\\GestionMatériels.csproj",
       "packagesPath": "C:\\Users\\sonny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatériels\\obj\\",
+      "outputPath": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatérielsNew\\gestionmateriel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

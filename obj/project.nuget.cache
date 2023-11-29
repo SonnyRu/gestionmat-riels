@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xIbG/ECij8dOnLmiRPwkoDUCz9k+/4bRLBYu9P9QX9+9YkCeWBFLBRhvFtBaEr2W6av9/45kY+qrVBCcWsRGiA==",
+  "dgSpecHash": "Ted7QkYL04bQqWY2FLOKkc3WFbJsnu9TjxkftBvpuQiiaxpQ8xmhZIHSiwJM/M0UYgMZs06akt0ATTFmoZcyxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatériels\\GestionMatériels.csproj",
+  "projectFilePath": "C:\\Users\\sonny\\OneDrive\\Bureau\\GestionMateriel_New\\GestionMatérielsNew\\gestionmateriel\\GestionMatériels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sonny\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\sonny\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
