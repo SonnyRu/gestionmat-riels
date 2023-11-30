@@ -172,6 +172,7 @@
             ajouterpret.TabIndex = 4;
             ajouterpret.Text = "Ajouter";
             ajouterpret.UseVisualStyleBackColor = false;
+            ajouterpret.Click += ajouterpret_Click;
             // 
             // FVPrêts
             // 

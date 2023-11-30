@@ -40,7 +40,7 @@
             label3 = new Label();
             label4 = new Label();
             idmateriel = new NumericUpDown();
-            boutonAddCombi = new Button();
+            boutonAddPrêt = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)idnageur).BeginInit();
             ((System.ComponentModel.ISupportInitialize)idmateriel).BeginInit();
@@ -96,11 +96,13 @@
             dateemprunt.CalendarForeColor = Color.FromArgb(92, 51, 127);
             dateemprunt.CalendarTitleForeColor = Color.FromArgb(92, 51, 127);
             dateemprunt.Cursor = Cursors.IBeam;
+            dateemprunt.CustomFormat = "";
             dateemprunt.Font = new Font("Microsoft YaHei", 8F, FontStyle.Bold, GraphicsUnit.Point);
             dateemprunt.Location = new Point(206, 118);
             dateemprunt.Name = "dateemprunt";
             dateemprunt.Size = new Size(231, 25);
             dateemprunt.TabIndex = 4;
+            dateemprunt.ValueChanged += dateemprunt_ValueChanged;
             // 
             // dateTimePicker1
             // 
@@ -165,19 +167,19 @@
             idmateriel.TabIndex = 9;
             idmateriel.ValueChanged += numericUpDown1_ValueChanged;
             // 
-            // boutonAddCombi
+            // boutonAddPrêt
             // 
-            boutonAddCombi.FlatStyle = FlatStyle.Flat;
-            boutonAddCombi.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            boutonAddCombi.ForeColor = Color.White;
-            boutonAddCombi.Location = new Point(206, 365);
-            boutonAddCombi.Margin = new Padding(4);
-            boutonAddCombi.Name = "boutonAddCombi";
-            boutonAddCombi.Size = new Size(231, 64);
-            boutonAddCombi.TabIndex = 11;
-            boutonAddCombi.Text = "Ajouter";
-            boutonAddCombi.UseVisualStyleBackColor = true;
-            boutonAddCombi.Click += boutonAddCombi_Click;
+            boutonAddPrêt.FlatStyle = FlatStyle.Flat;
+            boutonAddPrêt.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            boutonAddPrêt.ForeColor = Color.White;
+            boutonAddPrêt.Location = new Point(206, 365);
+            boutonAddPrêt.Margin = new Padding(4);
+            boutonAddPrêt.Name = "boutonAddPrêt";
+            boutonAddPrêt.Size = new Size(231, 64);
+            boutonAddPrêt.TabIndex = 11;
+            boutonAddPrêt.Text = "Ajouter";
+            boutonAddPrêt.UseVisualStyleBackColor = true;
+            boutonAddPrêt.Click += boutonAddCombi_Click;
             // 
             // FAddPrêt
             // 
@@ -185,7 +187,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(92, 51, 127);
             ClientSize = new Size(643, 455);
-            Controls.Add(boutonAddCombi);
+            Controls.Add(boutonAddPrêt);
             Controls.Add(label4);
             Controls.Add(idmateriel);
             Controls.Add(label3);
@@ -221,6 +223,6 @@
         private Label label3;
         private Label label4;
         private NumericUpDown idmateriel;
-        private Button boutonAddCombi;
+        private Button boutonAddPrêt;
     }
 }

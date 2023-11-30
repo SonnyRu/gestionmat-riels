@@ -36,14 +36,14 @@ namespace GestionMatériels.Forms
 
         private void boutonAddCombi_Click(object sender, EventArgs e)
         {
-            string dateEmprunt = dateemprunt.Text;
-            string dateRetour = dateretour.Text;
+            DateTime dateEmprunt = dateemprunt.Value;
+            DateTime dateRetour = dateTimePicker1.Value;
             string IdNageur = idnageur.Text;
             string IdMateriel = idmateriel.Text;
 
             try
             {
-                DBInterface.AjouterCombinaison(dateEmprunt, dateRetour, IdNageur, IdMateriel);
+                DBInterface.AjouterPrêt(dateEmprunt, dateRetour, IdNageur, IdMateriel);
             }
             catch (Exception ex)
             {
@@ -53,9 +53,14 @@ namespace GestionMatériels.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FAccueil accueil = new FAccueil();
-            accueil.Show();
+            FVPrêts voirprêt = new FVPrêts();
+            voirprêt.Show();
             this.Hide();
+        }
+
+        private void dateemprunt_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -90,5 +90,12 @@ namespace GestionMatériels.Forms
             accueil.Show();
             this.Hide();
         }
+
+        private void ajouterpret_Click(object sender, EventArgs e)
+        {
+            FAddPrêt addprêt = new FAddPrêt();
+            addprêt.Show();
+            this.Hide();
+        }
     }
 }
