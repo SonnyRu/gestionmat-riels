@@ -1,0 +1,30 @@
+
+Log Entry : 17:20:23 mercredi 6 décembre 2023
+  :
+  :DBInterface : l'utilisateur vromaine vient de se connecter
+-------------------------------
+
+Log Entry : 17:24:43 mercredi 6 décembre 2023
+  :
+  :DBInterface : l'utilisateur vromaine vient de se connecter
+-------------------------------
+
+Log Entry : 17:24:43 mercredi 6 décembre 2023
+  :
+  :Matériel Combi : Affichage du matériel
+-------------------------------
+
+Log Entry : 17:24:43 mercredi 6 décembre 2023
+  :
+  :Matériel Mono : Affichage du matériel
+-------------------------------
+
+Log Entry : 17:24:43 mercredi 6 décembre 2023
+  :
+  :Matériel Tuba : Affichage du matériel
+-------------------------------
+
+Log Entry : 17:24:43 mercredi 6 décembre 2023
+  :
+  :Matériel Lunettes : erreur SQL
+-------------------------------

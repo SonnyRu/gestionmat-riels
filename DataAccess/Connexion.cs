@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using Microsoft.VisualBasic.Logging;
 using GestionMatériels.Tools;
 
 namespace GestionMatériels.DataAccess
@@ -44,9 +43,10 @@ namespace GestionMatériels.DataAccess
             }
             catch (SqlException)
             {
-                using (StreamWriter w = File.AppendText("../Logs/logerror.txt"))
+                string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Connection : erreur de connexion au serveur", w);
+                    Log.WriteLog("Connection : erreur de connexion au serveur", w);
                 }
             }
             return sqlConnection;
