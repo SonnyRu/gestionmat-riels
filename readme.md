@@ -64,6 +64,19 @@ Pour installer l'application, suivez les étapes ci-dessous :
 	</runtime>
 </configuration>
 ```
+
+5. Assurez-vous que dans votre `.csproj` le code suivant soit bien présent. Si ce n'est pas le cas, créez-le :
+
+```xml
+<ItemGroup>
+	  <Content Include="Config\logerror.txt">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>	
+</ItemGroup>
+```
+
+6. Faites un clic droit sur le projet et cliquez sur “Publier”. Cela ouvrira une page. Comme cible, choisissez “Dossier”, puis cliquez sur “Suivant”. Pour la cible spécifique, choisissez “Dossier”, puis cliquez sur “Suivant”. Vous pouvez alors choisir l’emplacement du dossier de publication. Personnellement, je l’ai mis à la racine. Enfin, cliquez sur “Terminer”.
+
 ## Utilisation <a id="utilisation"></a>
 
 Pour utiliser l'application, il faut tout d'abord s'y connecter et seul l'administrateur le peut. Lorsqu'il se connecte, il se retrouve sur la page d'accueil où il retrouvera la liste de tout le matériel de l'association. Sur le côté, plusieurs boutons sont disponibles :
