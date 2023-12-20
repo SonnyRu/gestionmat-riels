@@ -19,13 +19,6 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 
 ## Technologies Utilisées <a id="techno"></a>
 
-- **Langage de programmation** : C#
-- **Base de données** : Microsoft SQL Server
-- **Framework** : .Net
-- **Interface utilisateur** : Windows Forms
-- **Contrôle de version** : Git
-- **Gestion des packages** : NuGet
-
 | **Nom** | **Description** |
 | ------- | ------------- |
 | ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) | Langage de programmation orienté objet. |
