@@ -77,6 +77,16 @@ Pour installer l'application, suivez les étapes ci-dessous :
 
 6. Faites un clic droit sur le projet et cliquez sur “Publier”. Cela ouvrira une page. Comme cible, choisissez “Dossier”, puis cliquez sur “Suivant”. Pour la cible spécifique, choisissez “Dossier”, puis cliquez sur “Suivant”. Vous pouvez alors choisir l’emplacement du dossier de publication. Personnellement, je l’ai mis à la racine. Enfin, cliquez sur “Terminer”.
 
+7. **Rappel important :** Assurez-vous d’être bien connecté au réseau de l’établissement ou utilisez un VPN pour vous y connecter. L’administrateur a été créé dans la base de données, donc si vous n’êtes pas connecté au réseau, l’application ne fonctionnera pas.
+
+8. Voici donc l'utilisateur admin pour se connecter à l'application lorsque vous l'avez executer :
+
+| **Identifiant** | **Mot de passe** |
+| ------- | ------------- |
+| vormaine | C1Secret! |
+
+
+
 ## Utilisation <a id="utilisation"></a>
 
 Pour utiliser l'application, il faut tout d'abord s'y connecter et seul l'administrateur le peut. Lorsqu'il se connecte, il se retrouve sur la page d'accueil où il retrouvera la liste de tout le matériel de l'association. Sur le côté, plusieurs boutons sont disponibles :
