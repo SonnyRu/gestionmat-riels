@@ -2,11 +2,22 @@
 
 # Gestion de Matériels - LyonPalme
 
-## Description
+## Sommaire
+
+- [Description](#description)
+- [Technologies Utilisées](#techno)
+- [Prérequis](#prerequis)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Dépendances](#dependances)
+
+
+
+## Description <a id="description"></a>
 
 L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de l'association Lyon Palme ainsi que de le visualiser. Elle permet aussi de créer des prêts, de les voir ainsi que de voir les nageurs inscrits dans l'association.
 
-## Technologies Utilisées
+## Technologies Utilisées <a id="techno"></a>
 
 - **Langage de programmation** : C#
 - **Base de données** : Microsoft SQL Server
@@ -15,12 +26,12 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 - **Contrôle de version** : Git
 - **Gestion des packages** : NuGet
 
-## Prérequis
+## Prérequis <a id="prerequis"></a>
 
 Pour exécuter ce projet, vous devez avoir au minimum .Net 6.0 installé sur votre machine. Les versions inférieures à 6.0 ne sont pas compatibles avec ce projet.
 
 
-## Installation
+## Installation <a id="installation"></a>
 
 Pour installer l'application, suivez les étapes ci-dessous :
 
@@ -52,7 +63,7 @@ Pour installer l'application, suivez les étapes ci-dessous :
 	</runtime>
 </configuration>
 ```
-## Utilisation
+## Utilisation <a id="utilisation"></a>
 
 Pour utiliser l'application, il faut tout d'abord s'y connecter et seul l'administrateur le peut. Lorsqu'il se connecte, il se retrouve sur la page d'accueil où il retrouvera la liste de tout le matériel de l'association. Sur le côté, plusieurs boutons sont disponibles :
 
@@ -61,7 +72,7 @@ Pour utiliser l'application, il faut tout d'abord s'y connecter et seul l'admini
 - Ajout Monopalme : ajoute un nouveau matériel (Monopalme, avec sa pointure, son type et sa marque).
 - Voir Nageurs : où l'on peut voir la liste des nageurs.
 
-## Dépendances
+## Dépendances <a id="dependances"></a>
 
 L'application dépend d'une base de données. Si nous ne sommes pas connectés au réseau de l'établissement, l'accès ne se fera pas et l'application ne fonctionnera pas.
 
