@@ -15,6 +15,11 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 - **Contrôle de version** : Git
 - **Gestion des packages** : NuGet
 
+## Prérequis
+
+Pour exécuter ce projet, vous devez avoir au minimum .Net 6.0 installé sur votre machine. Les versions inférieures à 6.0 ne sont pas compatibles avec ce projet.
+
+
 ## Installation
 
 Pour installer l'application, suivez les étapes ci-dessous :
