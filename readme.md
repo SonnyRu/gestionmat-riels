@@ -17,7 +17,35 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 
 ## Installation
 
-Les instructions d'installation seront fournies ultérieurement.
+Pour installer l'application, suivez les étapes ci-dessous :
+
+1. Clonez le dépôt Git sur votre machine locale.
+2. Ouvrez le projet dans votre environnement de développement intégré (IDE).
+3. Créez un nouveau fichier `App.config` dans le répertoire racine du projet.
+4. Dans le fichier `App.config`, ajoutez le code nécessaire pour configurer l'accès à la base de données. Voici un exemple de ce à quoi pourrait ressembler votre fichier `App.config` :
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<startup>
+		<supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+	</startup>
+	<connectionStrings>
+		<add name="sqlserver_gestionmatériel" connectionString="Data Source=192.168.100.236;Initial Catalog=sonnyrusso;User ID=LPSonny;Password=GEST10N_m@terIL!" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" />
+			</dependentAssembly>
+		</assemblyBinding>
+	</runtime>
+</configuration>
 
 ## Utilisation
 
