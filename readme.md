@@ -26,6 +26,14 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 - **Contrôle de version** : Git
 - **Gestion des packages** : NuGet
 
+| **Nom** | **Description** |
+| ------- | ------------- |
+| ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) | Langage de programmation orienté objet. |
+| ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white) | Base de données. |
+| ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white) | Framework .Net `6.0`. |
+| ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) | Interface utilisateur avec Windows Forms |
+| ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) | Contrôle de version. |
+
 ## Prérequis <a id="prerequis"></a>
 
 Pour exécuter ce projet, vous devez avoir au minimum .Net 6.0 installé sur votre machine. Les versions inférieures à 6.0 ne sont pas compatibles avec ce projet.
