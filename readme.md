@@ -46,7 +46,7 @@ Pour installer l'application, suivez les étapes ci-dessous :
 		</assemblyBinding>
 	</runtime>
 </configuration>
-
+```
 ## Utilisation
 
 Pour utiliser l'application, il faut tout d'abord s'y connecter et seul l'administrateur le peut. Lorsqu'il se connecte, il se retrouve sur la page d'accueil où il retrouvera la liste de tout le matériel de l'association. Sur le côté, plusieurs boutons sont disponibles :
