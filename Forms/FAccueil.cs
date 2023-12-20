@@ -210,7 +210,7 @@ namespace GestionMatériels.Forms
                 {
                     if (materiel_combi.Taille != "")
                     {
-                        string[] row = { materiel_combi.Nom, materiel_combi.Marque, materiel_combi.SaisonCombi, materiel_combi.Taille, "", "" };
+                        string[] row = { Convert.ToString(materiel_combi.Id), materiel_combi.Nom, materiel_combi.Marque, materiel_combi.SaisonCombi, materiel_combi.Taille, "", "" };
                         ListViewItem listViewItem = new ListViewItem(row);
                         listcombi.Items.Add(listViewItem);
                     }
@@ -223,7 +223,7 @@ namespace GestionMatériels.Forms
                 {
                     if (materiel_mono.Pointure != "")
                     {
-                        string[] row = { materiel_mono.Nom, materiel_mono.Marque, materiel_mono.TypeMono, materiel_mono.Pointure, "", "" };
+                        string[] row = { Convert.ToString(materiel_mono.Id), materiel_mono.Nom, materiel_mono.Marque, materiel_mono.TypeMono, materiel_mono.Pointure, "", "" };
                         ListViewItem listViewItem = new ListViewItem(row);
                         listmono.Items.Add(listViewItem);
                     }
@@ -234,7 +234,7 @@ namespace GestionMatériels.Forms
             {
                 foreach (MatérielModel tuba in tubas)
                 {
-                    string[] row = { tuba.Nom, tuba.Marque, "", "", "", "" };
+                    string[] row = { Convert.ToString(tuba.Id), tuba.Nom, tuba.Marque, "", "", "", "" };
                     ListViewItem listViewItem = new ListViewItem(row);
                     listtuba.Items.Add(listViewItem);
                 }
@@ -244,7 +244,7 @@ namespace GestionMatériels.Forms
             {
                 foreach (MatérielModel lunette in lunettes)
                 {
-                    string[] row = { lunette.Nom, lunette.Marque, "", "", "", "" };
+                    string[] row = { Convert.ToString(lunette.Id), lunette.Nom, lunette.Marque, "", "", "", "" };
                     ListViewItem listViewItem = new ListViewItem(row);
                     listlunette.Items.Add(listViewItem);
                 }

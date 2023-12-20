@@ -43,7 +43,6 @@
             dateretour = new ColumnHeader();
             actualisation = new Button();
             ajouterpret = new Button();
-            supprimerpret = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -173,28 +172,13 @@
             ajouterpret.TabIndex = 4;
             ajouterpret.Text = "Ajouter";
             ajouterpret.UseVisualStyleBackColor = false;
-            // 
-            // supprimerpret
-            // 
-            supprimerpret.BackColor = Color.White;
-            supprimerpret.FlatAppearance.BorderColor = Color.FromArgb(92, 51, 127);
-            supprimerpret.FlatAppearance.BorderSize = 2;
-            supprimerpret.FlatStyle = FlatStyle.Flat;
-            supprimerpret.Font = new Font("Microsoft YaHei", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            supprimerpret.ForeColor = Color.FromArgb(92, 51, 127);
-            supprimerpret.Location = new Point(241, 137);
-            supprimerpret.Name = "supprimerpret";
-            supprimerpret.Size = new Size(114, 41);
-            supprimerpret.TabIndex = 5;
-            supprimerpret.Text = "Supprimer";
-            supprimerpret.UseVisualStyleBackColor = false;
+            ajouterpret.Click += ajouterpret_Click;
             // 
             // FVPrêts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(supprimerpret);
             Controls.Add(ajouterpret);
             Controls.Add(actualisation);
             Controls.Add(listPret);
@@ -225,6 +209,5 @@
         private PictureBox pictureBox1;
         private Button actualisation;
         private Button ajouterpret;
-        private Button supprimerpret;
     }
 }

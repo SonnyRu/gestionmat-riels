@@ -1,0 +1,6 @@
+﻿<Project>
+	<Target Name="PostBuild" AfterTargets="Publish">
+		<Exec Command="mkdir $(PublishDir)Config" />
+		<Exec Command="echo.> $(PublishDir)Config\logerror.txt" />
+	</Target>
+</Project>

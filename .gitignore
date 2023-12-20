@@ -363,7 +363,11 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Ignore bin directory
-/bin/
+bin/
 
 # Ignore obj directory
-/obj/
+obj/
+
+# Fichiers de configuration
+*.config
+

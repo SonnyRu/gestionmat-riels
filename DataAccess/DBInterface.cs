@@ -9,7 +9,6 @@ using GestionMatériels.Models;
 using GestionMatériels.Tools;
 using GestionMatériels.Forms;
 using System.IO;
-using Microsoft.VisualBasic.Logging;
 using GestionMatériels.DataAccess;
 using System.Drawing;
 
@@ -27,49 +26,52 @@ namespace GestionMatériels.DataAccess
         /// <returns>L'objet Conseiller qui s'est connecté</returns>
         public static AdminModel GetAdmin(string login, byte[] password)
         {
-            AdminModel admin = new AdminModel();
-            SqlConnection connection = null;
+            AdminModel admin = new AdminModel(); // Création d'un nouvel objet admin
+            SqlConnection connection = null; // Initialisation de la connexion à null
             try
             {
-                connection = Connection.getInstance().GetConnection();
-                using (SqlCommand sqlCommand = new SqlCommand("lp_Authentification", connection))
+                connection = Connection.getInstance().GetConnection(); // Obtention de l'instance de connexion
+                using (SqlCommand sqlCommand = new SqlCommand("lp_Authentification", connection)) // Utilisation de la procédure SQL pour l'authentification
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@pLogin", SqlDbType.NVarChar).Value = login;
-                    sqlCommand.Parameters.Add("@pPassword", SqlDbType.VarBinary).Value = password;
-                    using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
+                    sqlCommand.CommandType = CommandType.StoredProcedure; // Définition du type de commande en tant que procédure stockée
+                    sqlCommand.Parameters.AddWithValue("@pLogin", SqlDbType.NVarChar).Value = login; // Ajout du paramètre de login
+                    sqlCommand.Parameters.Add("@pPassword", SqlDbType.VarBinary).Value = password; // Ajout du paramètre de mot de passe
+                    using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader()) // Utilisation du lecteur SQL pour lire les résultats
                     {
-                        if (sqlDataReader.HasRows)
+                        if (sqlDataReader.HasRows) // Si le lecteur a des lignes
                         {
-                            sqlDataReader.Read();
-                            admin.Id = sqlDataReader.GetInt32(0);
-                            admin.Nom = sqlDataReader.GetString(1);
-                            admin.Prenom = sqlDataReader.GetString(2);
-                            using (StreamWriter w = File.AppendText("../Logs/logerror.txt"))
+                            sqlDataReader.Read(); // Lecture de la ligne
+                            admin.Id = sqlDataReader.GetInt32(0); // Obtention de l'ID de l'admin
+                            admin.Nom = sqlDataReader.GetString(1); // Obtention du nom de l'admin
+                            admin.Prenom = sqlDataReader.GetString(2); // Obtention du prénom de l'admin
+                            string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                            using (StreamWriter w = File.AppendText(logErrorFilePath)) // Utilisation d'un StreamWriter pour écrire dans le fichier de log
                             {
-                                Logs.WriteLog(String.Concat("DBInterface : l'utilisateur ", login, " vient de se connecter"), w);
+                                Log.WriteLog(String.Concat("DBInterface : l'utilisateur ", login, " vient de se connecter"), w); // Écriture du log de connexion
                             }
                         }
-                        else
+                        else // Si le lecteur n'a pas de lignes
                         {
-                            using (StreamWriter w = File.AppendText("../Logs/logerror.txt"))
+                            string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                            using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat(String.Concat("DBInterface : identifiants de connexion invalide. Login :", login)), w);
+                                Log.WriteLog(String.Concat(String.Concat("DBInterface : identifiants de connexion invalide. Login :", login)), w); // Écriture du log d'erreur de connexion
                             }
                         }
                     }
                 }
             }
-            catch (InvalidOperationException)
+            catch (InvalidOperationException) // En cas d'exception d'opération invalide
             {
-                using (StreamWriter w = File.AppendText("../Logs/logerror.txt"))
+                string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
+                using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("DBInterface : erreur SQL", w);
+                    Log.WriteLog("DBInterface : erreur SQL", w); // Écriture du log d'erreur SQL
                 }
             }
             finally
             {
-                connection.Close();
+                connection.Close(); // Fermeture de la connexion
             }
             return admin;
         }
@@ -83,7 +85,7 @@ namespace GestionMatériels.DataAccess
         /// <returns></returns>
         public static List<CombinaisonModel> GetAllCombi(string Nom)
         {
-            List<CombinaisonModel> materiels_combi = new List<CombinaisonModel>();
+            List<CombinaisonModel> materiels_combi = new List<CombinaisonModel>(); // Création d'un nouvel objet materiels_combi
             SqlConnection connection = null;
             try
             {
@@ -110,7 +112,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Matériel Combi : Affichage du matériel"), w);
+                                Log.WriteLog(String.Concat("Matériel Combi : Affichage du matériel"), w);
                             }
                         }
                         else
@@ -118,7 +120,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat(String.Concat("Matériel Combi : Erreur")), w);
+                                Log.WriteLog(String.Concat(String.Concat("Matériel Combi : Erreur")), w);
                             }
                         }
                     }
@@ -130,7 +132,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Matériel Combi : erreur SQL", w);
+                    Log.WriteLog("Matériel Combi : erreur SQL", w);
                 }
             }
             finally
@@ -176,7 +178,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Matériel Mono : Affichage du matériel"), w);
+                                Log.WriteLog(String.Concat("Matériel Mono : Affichage du matériel"), w);
                             }
                         }
                         else
@@ -184,7 +186,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat(String.Concat("Matériel Mono : Erreur")), w);
+                                Log.WriteLog(String.Concat(String.Concat("Matériel Mono : Erreur")), w);
                             }
                         }
                     }
@@ -196,7 +198,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Matériel Mono : erreur SQL", w);
+                    Log.WriteLog("Matériel Mono : erreur SQL", w);
                 }
             }
             finally
@@ -239,7 +241,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Matériel Tuba : Affichage du matériel"), w);
+                                Log.WriteLog(String.Concat("Matériel Tuba : Affichage du matériel"), w);
                             }
                         }
                         else
@@ -247,7 +249,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat(String.Concat("Matériel Tuba : Erreur")), w);
+                                Log.WriteLog(String.Concat(String.Concat("Matériel Tuba : Erreur")), w);
                             }
                         }
                     }
@@ -259,7 +261,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Matériel Tuba : erreur SQL", w);
+                    Log.WriteLog("Matériel Tuba : erreur SQL", w);
                 }
             }
             finally
@@ -301,7 +303,7 @@ namespace GestionMatériels.DataAccess
                         string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                         using (StreamWriter w = File.AppendText(logErrorFilePath))
                         {
-                            Logs.WriteLog(String.Concat("Matériel Lunettes : Affichage du matériel"), w);
+                            Log.WriteLog(String.Concat("Matériel Lunettes : Affichage du matériel"), w);
                         }
                     }
                 }
@@ -311,7 +313,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Matériel Lunettes : erreur SQL", w);
+                    Log.WriteLog("Matériel Lunettes : erreur SQL", w);
                 }
             }
             finally
@@ -353,7 +355,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Nageur : Affichage les nageurs"), w);
+                                Log.WriteLog(String.Concat("Nageur : Affichage les nageurs"), w);
                             }
                         }
                         else
@@ -361,7 +363,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat(String.Concat("Nageur : Erreur")), w);
+                                Log.WriteLog(String.Concat(String.Concat("Nageur : Erreur")), w);
                             }
                         }
                     }
@@ -373,7 +375,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Nageur : erreur SQL", w);
+                    Log.WriteLog("Nageur : erreur SQL", w);
                 }
             }
             finally
@@ -422,7 +424,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Prêt : Affichage des prêts"), w);
+                                Log.WriteLog(String.Concat("Prêt : Affichage des prêts"), w);
                             }
                         }
                         else
@@ -430,7 +432,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat(String.Concat("Prêt : Erreur")), w);
+                                Log.WriteLog(String.Concat(String.Concat("Prêt : Erreur")), w);
                             }
                         }
                     }
@@ -442,7 +444,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Prêt : erreur SQL", w);
+                    Log.WriteLog("Prêt : erreur SQL", w);
                 }
             }
             finally
@@ -504,7 +506,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Ajout_Combi : Ajout d'une combinaison (Nom : " + Nom + ") "), w);
+                                Log.WriteLog(String.Concat("Ajout_Combi : Ajout d'une combinaison (Nom : " + Nom + ") "), w);
                             }
                         }
                     }
@@ -516,7 +518,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Ajout_Combi : erreur SQL", w);
+                    Log.WriteLog("Ajout_Combi : erreur SQL", w);
                 }
             }
             finally
@@ -574,7 +576,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Ajout_Mono : Ajout d'un monopalme (Nom : " + Nom + ") "), w);
+                                Log.WriteLog(String.Concat("Ajout_Mono : Ajout d'un monopalme (Nom : " + Nom + ") "), w);
                             }
                         }
                     }
@@ -586,7 +588,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Ajout_Mono : erreur SQL", w);
+                    Log.WriteLog("Ajout_Mono : erreur SQL", w);
                 }
             }
             finally
@@ -642,7 +644,7 @@ namespace GestionMatériels.DataAccess
                             string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                             using (StreamWriter w = File.AppendText(logErrorFilePath))
                             {
-                                Logs.WriteLog(String.Concat("Ajout_Prêt : Ajout d'un prêt" ), w);
+                                Log.WriteLog(String.Concat("Ajout_Prêt : Ajout d'un prêt" ), w);
                             }
                         }
                     }
@@ -654,7 +656,7 @@ namespace GestionMatériels.DataAccess
                 string logErrorFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "logerror.txt");
                 using (StreamWriter w = File.AppendText(logErrorFilePath))
                 {
-                    Logs.WriteLog("Ajout_Prêt : erreur SQL", w);
+                    Log.WriteLog("Ajout_Prêt : erreur SQL", w);
                 }
             }
             finally

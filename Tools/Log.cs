@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace GestionMatériels.Tools
 {
@@ -12,7 +9,7 @@ namespace GestionMatériels.Tools
     /// Date de modification : 
     /// Gère les logs de l'application.
     /// </summary>
-    public static class Logs
+    public static class Log
     {
         /// <summary>
         /// Ecrit les logs dans un fichier dédié.
@@ -20,26 +17,14 @@ namespace GestionMatériels.Tools
         /// </summary>
         /// <param name="logMessage">Le message à logger.</param>
         /// <param name="w">Le fichier dans lequel écrire.</param>
-        public static void WriteLog(string logMessage, System.IO.TextWriter w)
+        public static void WriteLog(string logMessage, TextWriter w)
         {
             w.Write("\r\nLog Entry : ");
             w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
             w.WriteLine("  :");
             w.WriteLine($"  :{logMessage}");
             w.WriteLine("-------------------------------");
-        }
-
-        /// <summary>
-        /// Parcours le fichier log passé en paramètre et affiche son contenu.
-        /// </summary>
-        /// <param name="r">Le fichier à lire.</param>
-        public static void DumpLog(System.IO.StreamReader r)
-        {
-            string line;
-            while ((line = r.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
+            w.Flush();
         }
     }
 }
