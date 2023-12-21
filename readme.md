@@ -81,9 +81,9 @@ Pour installer l'application, suivez les étapes ci-dessous :
 
 8. Voici donc l'utilisateur admin pour se connecter à l'application lorsque vous l'avez executer :
 
-| **Identifiant** | **Mot de passe** |
+| **Login** | **Mot de passe** |
 | ------- | ------------- |
-| vormaine | C1Secret! |
+| vromaine | C1Secret! |
 
 
 
