@@ -7,6 +7,7 @@
 - [Description](#description)
 - [Technologies Utilisées](#techno)
 - [Diagramme d'activité](#activité)
+- [Digramme de cas](#usecase)
 - [Prérequis](#prerequis)
 - [Installation](#installation)
 - [Utilisation](#utilisation)
@@ -32,6 +33,11 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 ## Diagramme d'activité <a id="activité"></a>
 
 ![Diagramme d'activité](/Forms/Images/activité.png)
+
+
+## Diagramme de cas <a id="usecase"></a>
+
+![Diagramme de cas](/Forms/Images/usecase.png)
 
 
 ## Prérequis <a id="prerequis"></a>
