@@ -28,31 +28,39 @@ namespace GestionMatériels.Forms
 
         private void boutonConnexion_Click(object sender, EventArgs e)
         {
-
             string login, password;
             login = usernameBox.Text;
             password = passwordBox.Text;
-            using (SHA512Managed sha2 = new SHA512Managed())
+            try
             {
-                var password_hash = sha2.ComputeHash(Encoding.UTF8.GetBytes(password));
-                admin = DBInterface.GetAdmin(login, password_hash);
+                using (SHA512Managed sha2 = new SHA512Managed())
+                {
+                    var password_hash = sha2.ComputeHash(Encoding.UTF8.GetBytes(password));
+                    admin = DBInterface.GetAdmin(login, password_hash);
+                }
+                //On teste que le conseiller ne soit pas vide. Si il est vide, c'est qu'il y a eu une erreur...
+                if (admin != null)
+                {
+                    if (admin.Prenom == null || admin.Nom == null)
+                    {
+                        authentif.Text = "Identifiants de connexion invalides";
+                    }
+                    else
+                    {
+                        authentif.Text = "Vous êtes connecté.";
+                        FAccueil accueil = new FAccueil();
+                        accueil.Show();
+                        this.Hide();
+                    }
+                }
             }
-            //On teste que le conseiller ne soit pas vide. Si il est vide, c'est qu'il y a eu une erreur...
-            if (admin != null)
+            catch (Exception ex)
             {
-                if (admin.Prenom == null || admin.Nom == null)
-                {
-                    authentif.Text = "Identifiants de connexion invalides";
-                }
-                else
-                {
-                    authentif.Text = "Vous êtes connecté.";
-                    FAccueil accueil = new FAccueil();
-                    accueil.Show();
-                    this.Hide();
-                }
+                // Affiche un MessageBox si une exception est levée
+                MessageBox.Show("Erreur de connexion à la base de données: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void authentif_Click(object sender, EventArgs e)
         {
