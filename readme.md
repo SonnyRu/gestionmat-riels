@@ -6,6 +6,8 @@
 
 - [Description](#description)
 - [Technologies Utilisées](#techno)
+- [Diagramme d'activité](#activité)
+- [Digramme de cas](#usecase)
 - [Prérequis](#prerequis)
 - [Installation](#installation)
 - [Utilisation](#utilisation)
@@ -26,6 +28,17 @@ L'application "Gestion de Matériels - LyonPalme" sert à gérer le matériel de
 | ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white) | Framework .Net `6.0`. |
 | ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) | Interface utilisateur avec Windows Forms |
 | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) | Contrôle de version. |
+
+
+## Diagramme d'activité <a id="activité"></a>
+
+![Diagramme d'activité](/Forms/Images/activité.png)
+
+
+## Diagramme de cas <a id="usecase"></a>
+
+![Diagramme de cas](/Forms/Images/usecase.png)
+
 
 ## Prérequis <a id="prerequis"></a>
 
